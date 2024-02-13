@@ -1,17 +1,12 @@
-import React from 'react'
-import Header from './Header'
-import Footer from './Footer'
-import MainSection from './MainSection'
+import React from "react";
+import MainSection from "./MainSection";
 
 const Home = () => {
   return (
-   <>
-<Header/>
-<MainSection/>
-<Footer/>
+    <>
+      <MainSection />
+    </>
+  );
+};
 
-   </>
-  )
-}
-
-export default Home
+export default Home;
