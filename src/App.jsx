@@ -6,8 +6,11 @@ function App() {
 
   return (
     <>
+<<<<<<< HEAD
      <Home/>
      
+=======
+>>>>>>> 8d23490028c19870f7efacb45afb2203897de56b
     </>
   )
 }
