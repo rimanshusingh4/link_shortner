@@ -1,10 +1,16 @@
 import React from 'react'
+import Header from './Header'
+import Footer from './Footer'
+import MainSection from './MainSection'
 
 const Home = () => {
   return (
-    <div>
-     <h1> Home Page component 1 </h1>
-    </div>
+   <>
+<Header/>
+<MainSection/>
+<Footer/>
+
+   </>
   )
 }
 
