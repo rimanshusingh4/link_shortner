@@ -6,6 +6,7 @@
 body {
   background: linear-gradient(#22054f 20%, #7855ad 80%);
   background-repeat: no-repeat;
+  margin: 0;
 }
 
 /* ---------------- Main Section Style -------------  */
