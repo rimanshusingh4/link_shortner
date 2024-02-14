@@ -1,0 +1,12 @@
+.footer{
+    justify-content: space-around;
+    align-items: center;
+    display: flex;
+}
+.items-footer{
+    display: flex;
+    list-style: none;
+}
+li{
+    margin-left: 45px;
+}
