@@ -1,12 +1,13 @@
 import React from 'react'
 import  './Navbar.css'
+import Logo from '../../assets/logo.png'
 function Navbar() {
   return (
     <>
         <nav className='container1'>
           <div className='items'>
             <div className='logo'>
-              <img src='https://alexharkness.com/wp-content/uploads/2020/06/logo-2.png' height={60} alt='logo'/>
+              <img src={Logo} height={60} alt='logo'/>
             </div>
             <div className='list'>
               <ul className='lists'>
