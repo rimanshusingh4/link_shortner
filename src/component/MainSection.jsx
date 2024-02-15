@@ -1,5 +1,6 @@
 import React from "react";
 
+
 const MainSection = () => {
   return (
     <>
@@ -10,7 +11,7 @@ const MainSection = () => {
               <img src="" alt="" />
             </div>
             <div className="logo"></div>
-            <h3> link_shortner</h3>
+            <h3 className=""> Link_Shortner</h3>
             <p className="small"> * .... free and always will be.</p>
           </div>
         </div>

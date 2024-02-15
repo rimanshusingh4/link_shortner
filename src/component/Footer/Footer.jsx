@@ -1,30 +1,46 @@
 import React from 'react'
 import './Footer.css'
-
+import Logo from '../../assets/logo.png'
 function Footer() {
   return (
-    <div className='footer'>
+    <>
+     <div className='footer'>
         <div className='logo'>
-        <img src='https://alexharkness.com/wp-content/uploads/2020/06/logo-2.png' height={60} alt='logo'/>
+        <img src={Logo} height={60} alt='logo'/>
+        <p>There is always one more bug to fix.</p>
         </div>
         <div className='items-footer'>
             <div className='follow'>
-                <li style={{fontWeight: "bold"}}>Resource</li>
-                <li>Home</li>
+                <h3>Useful links</h3>
+                <ul>
+                    <li>Home</li>
                 <li>About-us</li>
+                </ul>
             </div>
             <div className='follow'>
-                <li style={{fontWeight: "bold"}}>Follow</li>
-                <li>Github</li>
+                <h3>Connect</h3>
+               <ul>
+               <li>Github</li>
                 <li>Discord</li>
+               </ul>
             </div>
             <div className='follow'>
-                <li style={{fontWeight: "bold"}}>Legal</li>
-                <li>Privacy & Policy</li>
+                <h3>Legal</h3>
+                <ul>
+                    <li>Privacy & Policy</li>
                 <li>Terms & Conditions</li>
+                </ul>
+                
             </div>
         </div>
+
     </div>
+
+    <div className='credit'>
+        <p>Copyright 2024 | Developed By Rimanshu & Shakshi</p>
+    </div>
+    </>
+   
   )
 }
 
