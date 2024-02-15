@@ -4,7 +4,7 @@ import React from "react";
 const MainSection = () => {
   return (
     <>
-      <div className="container" style={{backgroundColor: "#f4f3cd"}}>
+      <div className="container" >
         <div className="top-section">
           <div className="head">
             <div className="img">
