@@ -37,7 +37,7 @@ function Footer() {
     </div>
 
     <div className='credit'>
-        <p>Copyright 2024 | Developed By Rimanshu & Shakshi</p>
+        <p>Copyright 2024 </p>
     </div>
     </>
    

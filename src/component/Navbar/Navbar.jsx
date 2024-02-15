@@ -1,5 +1,6 @@
 import React from "react";
 import "./Navbar.css";
+import Logo from '../../assets/logo.png'
 import { Link } from "react-router-dom";
 function Navbar() {
   return (
@@ -8,7 +9,7 @@ function Navbar() {
         <div className="items">
           <div className="logo">
             <img
-              src="https://alexharkness.com/wp-content/uploads/2020/06/logo-2.png"
+              src= {Logo}
               height={60}
               alt="logo"
             />
