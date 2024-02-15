@@ -23,11 +23,12 @@ nav {
 li {
   color: black;
   font-size: x-large;
-  border-radius: 25px;
+  border-radius: 10px;
   text-align: center;
   cursor: pointer;
-  padding: 15px;
-  margin-left: 0;
+  padding: 0.5rem 1rem;
+  /* margin-left: 0; */
+  margin: 0 0.5rem 0 0 !important;
 }
 li:hover {
   background-color: cadetblue;
@@ -42,10 +43,16 @@ li:hover {
   background-color: black;
   font-size: 1.2rem;
   cursor: pointer;
-  border: 0;
+  border: 1px solid transparent;
   outline: 0;
   color: #fff;
   font-weight: 700;
+  transition: all 0.5s linear;
+}
+.button:hover {
+  border: 1px solid #000;
+  background-color: #fff;
+  color: #000;
 }
 .lists li a {
   color: #000;
