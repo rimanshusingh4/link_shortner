@@ -4,8 +4,7 @@ import "./About.css";
 const About = () => {
   return (
     <>
-      {/* <h1>About.js page </h1> */}
-      <div className="container about-container">
+      <div className="container  about-container" style={{ backgroundColor: "#f4f3cd" }}>
         <div className="left">
           <h6> About Bitly</h6>
           <h3 className="about-title">A catalyst for connections</h3>

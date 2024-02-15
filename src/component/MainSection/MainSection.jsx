@@ -1,6 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
+import {CopyToClipboard} from 'react-copy-to-clipboard';
 
 const MainSection = () => {
+
+  const [link, setLink] = useState({
+      links:"",
+  })
+  // console.log(link.links)
+  const [shortedURL, setshortedURL] = useState("")
+  
+  const shortURL = async () => {
+    try {
+      const response = await fetch(`https://tinyurl.com/api-create.php?url=${link.links}`);
+      console.log(response);
+      if(response.ok){
+        const data = await response.text();
+        setshortedURL(data);
+        console.log(data);
+      }
+    } catch (error) {
+      console.error("Error", error);
+    }
+  };
+  
+
+
   return (
     <>
       <div className="container">
@@ -21,8 +45,9 @@ const MainSection = () => {
                 type="text"
                 className="search-inp"
                 placeholder=" https://www.link_shortner.com"
+                onChange={(e)=> setLink({...link, links: e.target.value})}
               />
-              <button className="submit-btn cursor-pointer">
+              <button className="submit-btn cursor-pointer" onClick={shortURL}>
                 SHORTEN
                 <span>
                   <i className="fa-solid fa-wand-magic-sparkles"></i>
@@ -30,10 +55,12 @@ const MainSection = () => {
               </button>
             </div>
             <div className="result-input">
-              <p className="result-link"> https://www.link_s/43s4534 </p>
-              <div className="copy-icon">
-                <i className="fa-regular fa-copy"></i>
-              </div>
+              {/* <CopyToClipboard> */}
+                <p className="result-link"> {shortedURL} </p>
+                <div className="copy-icon">
+                  <i onCopy={()=>setCopy(true)} className="fa-regular fa-copy"></i>
+                </div>
+              {/* </CopyToClipboard> */}
             </div>
           </div>
         </div>
