@@ -1,16 +1,18 @@
 nav {
-  height: 100px;
-  border: 1px solid red;
+  height: 13vh;
+  /* border: 1px solid red; */
   background-color: white;
   display: flex;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 
 .items {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
+  gap: 1rem;
 }
 
 .lists {
@@ -25,21 +27,26 @@ li {
   text-align: center;
   cursor: pointer;
   padding: 15px;
+  margin-left: 0;
 }
 li:hover {
   background-color: cadetblue;
 }
-
-.button {
-  margin-top: 10px;
-  padding: 20px;
-  margin-left: 15px;
-  border-radius: 25px;
-  background-color: cadetblue;
-  font-size: larger;
-  cursor: pointer;
+.button-div {
+  margin-left: 5rem;
 }
-
+.button {
+  padding: 0.5rem 1rem;
+  margin: 0 1rem 0 0;
+  border-radius: 10px;
+  background-color: black;
+  font-size: 1.2rem;
+  cursor: pointer;
+  border: 0;
+  outline: 0;
+  color: #fff;
+  font-weight: 700;
+}
 .lists li a {
   color: #000;
   text-decoration: none;

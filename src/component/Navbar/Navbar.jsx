@@ -26,7 +26,7 @@ function Navbar() {
               </li>
             </ul>
           </div>
-          <div>
+          <div className="button-div">
             <button className="button">Login</button>
             <button className="button">Register</button>
           </div>
