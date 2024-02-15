@@ -1,10 +1,14 @@
 import React from "react";
-
+import "./MainSection.css";
 
 const MainSection = () => {
   return (
     <>
+<<<<<<< HEAD:src/component/MainSection.jsx
       <div className="container" >
+=======
+      <div className="container" style={{ backgroundColor: "#f4f3cd" }}>
+>>>>>>> 2031a74508eebe98be7dea53ae471baf8515e713:src/component/MainSection/MainSection.jsx
         <div className="top-section">
           <div className="head">
             <div className="img">
