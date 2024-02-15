@@ -1,16 +1,13 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import "./index.css";
-import App from "./App";
-import Navbar from "./component/Navbar/Navbar.jsx";
-import Footer from "./component/Footer/Footer.jsx";
-import MainSection from "./component/MainSection/MainSection.jsx";
-import About from "./component/About/About.jsx";
-import { BrowserRouter } from "react-router-dom";
-ReactDOM.createRoot(document.getElementById("root")).render(
-  <BrowserRouter>
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
-  </BrowserRouter>
-);
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import './index.css'
+import Navbar from './component/Navbar/Navbar.jsx'
+import Footer from './component/Footer/Footer.jsx'
+import MainSection from './component/MainSection.jsx'
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
+    <Navbar/>
+    <MainSection/>
+    <Footer/>
+  </React.StrictMode>,
+)
