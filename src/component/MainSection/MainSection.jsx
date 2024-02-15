@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import {CopyToClipboard} from 'react-copy-to-clipboard';
+import { toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 const MainSection = () => {
 
@@ -10,16 +12,24 @@ const MainSection = () => {
   const [shortedURL, setshortedURL] = useState("")
   
   const shortURL = async () => {
-    try {
-      const response = await fetch(`https://tinyurl.com/api-create.php?url=${link.links}`);
-      console.log(response);
-      if(response.ok){
-        const data = await response.text();
-        setshortedURL(data);
-        console.log(data);
+    if(link.links != ""){
+      try {
+        const response = await fetch(`https://tinyurl.com/api-create.php?url=${link.links}`);
+        if(response.ok){
+          const data = await response.text();
+          setshortedURL(data);
+          toast.success("Short Link Generated");
+        }
+        else{
+          toast.error("Not Valid URL")
+        }
+      } catch (error) {
+        toast.error("OOPs, It,s Not you. Its Us Mistake! Try Again")
+        console.error("Error", error);
       }
-    } catch (error) {
-      console.error("Error", error);
+    }
+    else{
+      toast.error("Please Enter URL")
     }
   };
   
