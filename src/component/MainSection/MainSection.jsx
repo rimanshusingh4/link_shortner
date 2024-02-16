@@ -14,7 +14,9 @@ const MainSection = () => {
   const shortURL = async () => {
     if(link.links != ""){
       try {
-        const response = await fetch(`https://tinyurl.com/api-create.php?url=${link.links}`);
+        const response = await axios.post("http://localhost:8001/",{
+          url: link.links
+      });
         if(response.ok){
           const data = await response.text();
           setshortedURL(data);
