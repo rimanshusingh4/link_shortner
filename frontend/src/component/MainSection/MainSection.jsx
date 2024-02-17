@@ -17,17 +17,20 @@ const MainSection = () => {
         const response = await axios.post('http://localhost:8001/url', {
           urls: [link.links], // Assuming the server expects an array of URLs
         });
-        // Assuming the server responds with the shortened URL
-        // if (response.data && response.data.shortenedURL) {
-        //   setshortedURL(response.data.shortenedURL);
-        //   toast.success("URL shortened successfully");
-        // } else {
-        //   toast.error("Failed to shorten URL");
-        // }
+        // retrive data from Database..................................
+        try {
+          const res = await fetch('/');
+          const jsonData = await res;
+          console.log(jsonData)
+          // setshortedURL(jsonData);
+        } catch (error) {
+          console.error('Error fetching data:', error);
+
+        }
+        // .............................................................
       } else{
         toast.error("Please Enter URL");
       }
-      const data = await axios.get()
     } catch (error) {
       // Handle network errors or server errors
       console.error("Error shortening URL:", error);

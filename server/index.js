@@ -20,6 +20,16 @@ app.use("/url", urlRoute);
 
 
 
+app.get('/url', async (req, res) => {
+  try {
+    const data = await URL.find();
+    res.json(data);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Server Error' });
+  }
+});
+
 
 app.get("/:shortId", async (req, res) => {
   const shortId = req.params.shortId;
