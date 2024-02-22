@@ -24,11 +24,6 @@ body {
   
 }
 
-.top-section .head h3 {
-  font-size: 4rem;
-  color: black;
-  margin: 1.5rem 1rem;
-}
 
 .head .small {
   margin: -1rem 0 0 0;
@@ -59,46 +54,7 @@ body {
   padding: 1rem;
   font-size: 1.1rem;
 }
-.submit-btn {
-  background: linear-gradient(to right, #f83600 0%, #f9d423 100%);;
 
-  border: 0;
-  outline: 0;
-  border-radius: 0 1rem 1rem 0;
-  height: 100%;
-  color: #fff;
-  width: 30%;
-  padding: 1rem;
-  text-align: center;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
-  cursor: pointer;
-}
-.result-input {
-  display: flex;
-  justify-content: space-between;
-  /* padding: 1rem; */
-  background: rgba(34, 34, 34, 0.62);
-  border-radius: 1rem;
-  margin: 1rem 0;
-  align-items: center;
-  color: #fff;
-}
-
-p.result-link {
-  font-size: 1.2rem;
-  padding: 1rem;
-}
-.submit-btn span i {
-  margin-right: 1.5rem;
-}
-
-.copy-icon i {
-  font-size: 1rem;
-  padding: 1.5rem;
-}
 /* BackGround Animation */
 
 @keyframes animate {

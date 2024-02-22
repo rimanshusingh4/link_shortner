@@ -2,12 +2,14 @@ const express = require("express");
 const { connectToMongoDB } = require("./connect");
 const urlRoute = require("./routes/url");
 const URL = require("./models/url");
+const BAS_URL = process.env.BASE_URL;
+
 var cors = require('cors')
 
 const app = express();
 const PORT = 8001;
 
-connectToMongoDB("mongodb://127.0.0.1:27017/short-url").then(() =>
+connectToMongoDB("mongodb+srv://{Username}:{Password}@{Cluster_Name}.egtjcsa.mongodb.net/short-url?retryWrites=true&w=majority").then(() =>
   console.log("Mongodb connected")
 );
 

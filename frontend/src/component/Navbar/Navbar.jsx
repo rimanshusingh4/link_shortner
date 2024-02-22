@@ -30,7 +30,11 @@ function Navbar() {
           <div className="button-div">
             <button className="button">Login</button>
             <button className="button">Register</button>
+
           </div>
+          <i class="ri-menu-line"></i>
+
+
         </div>
       </nav>
     </>

@@ -2,7 +2,11 @@
     justify-content: space-around;
     align-items: center;
     display: flex;
+    flex-wrap: wrap;
    
+}
+.logo{
+    /* border: 1px solid red; */
 }
 .footer .logo p{
     font-size: 18px;
@@ -13,6 +17,7 @@
 .items-footer{
     display: flex;
     list-style: none;
+    flex-wrap: wrap;
     gap: 20px;
     margin-top: 40px;
 }
@@ -27,6 +32,7 @@ li{
     align-items: flex-start;
     /* border: 1px solid red; */
     flex-direction: column;
+    width: 14rem;
 
 
    
@@ -68,4 +74,20 @@ li{
     padding: 20px 0;
     border-top: 1px solid orange;
     margin-top: 30px;
+}
+
+
+@media (width<=700px) {
+    .items-footer{
+        
+    }
+    .logo{
+        margin-top: 10px;
+        text-align: left;
+    }
+    .footer {
+        
+        justify-content:flex-start;
+    }
+    
 }

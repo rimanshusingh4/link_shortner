@@ -1,14 +1,19 @@
 import React, { useState } from "react";
-import {CopyToClipboard} from 'react-copy-to-clipboard';
 import { toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
-import axios from 'axios'
-const MainSection = () => {
+import'./MainSection.css';
+import axios from 'axios';
 
+
+
+const MainSection = () => {
+  
+  
   const [link, setLink] = useState({
       links: '',
   })
-  // console.log(link.links)
+  const [copySuccess, setCopySuccess] = useState(null);
+
   const [shortedURL, setshortedURL] = useState("")
   
   const shortURL = async () => {
@@ -17,17 +22,9 @@ const MainSection = () => {
         const response = await axios.post('http://localhost:8001/url', {
           urls: [link.links], // Assuming the server expects an array of URLs
         });
-        // retrive data from Database..................................
-        try {
-          const res = await fetch('/');
-          const jsonData = await res;
-          console.log(jsonData)
-          // setshortedURL(jsonData);
-        } catch (error) {
-          console.error('Error fetching data:', error);
-
+        if(response.data){
+          setshortedURL(`http://localhost:8001/${response.data.id}`)
         }
-        // .............................................................
       } else{
         toast.error("Please Enter URL");
       }
@@ -37,9 +34,19 @@ const MainSection = () => {
       toast.error("An error occurred while shortening the URL");
     }
   };
-  
-  
 
+  const copy = ()=>{
+    navigator.clipboard.writeText(shortedURL)
+      .then(() => {
+        setCopySuccess(true);
+        setTimeout(() => setCopySuccess(null), 2000); // Reset success message after 2 seconds
+      })
+      .catch(() => {
+        setCopySuccess(null);
+      });
+
+  }
+  
 
   return (
     <>
@@ -51,7 +58,7 @@ const MainSection = () => {
                 <img src="" alt="" />
               </div>
               <div className="logo"></div>
-              <h3 className=""> Link_Shortner</h3>
+              <h3 className=" linkheadline"> Link_Shortner</h3>
               <p className="small"> * .... free and always will be.</p>
             </div>
           </div>
@@ -70,13 +77,16 @@ const MainSection = () => {
                 </span>
               </button>
             </div>
+            
             <div className="result-input">
-              {/* <CopyToClipboard> */}
                 <p className="result-link"> {shortedURL} </p>
-                <div className="copy-icon">
-                  <i onCopy={()=>setCopy(true)} className="fa-regular fa-copy"></i>
-                </div>
-              {/* </CopyToClipboard> */}
+                {shortedURL == "" ?(<div className="copy-icon " style={{ position:'relative', cursor: "pointer",display:'none'}} >
+                  <i onClick={copy} className="fa-regular fa-copy"></i>
+                  {copySuccess === true && <span style={{ color: 'green', position:'absolute', bottom: '-50px',right:"10px",backgroundColor:"#ffff", borderRadius:"10px" ,padding:"2px 5px"}}>Copied to clipboard!</span>}
+                </div>):<div className="copy-icon" style={{ position:'relative', cursor: "pointer",display:'block'}} >
+                  <i onClick={copy} className="fa-regular fa-copy"></i>
+                  {copySuccess === true && <span style={{ color: 'green', position:'absolute', bottom: '-50px',right:"10px",backgroundColor:"#ffff", borderRadius:"10px" ,padding:"2px 5px"}}>Copied to clipboard!</span>}
+                </div>}
             </div>
           </div>
         </div>
