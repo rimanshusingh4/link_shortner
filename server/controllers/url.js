@@ -12,7 +12,6 @@ async function handleGenerateNewShortURL(req, res) {
     redirectURL: body,
     visitHistory: [],
   });
-
   return res.json({ id: shortID });
 }
 

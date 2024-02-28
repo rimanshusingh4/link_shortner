@@ -19,11 +19,11 @@ const MainSection = () => {
   const shortURL = async () => {
     try {
       if (link.links !== "") {
-        const response = await axios.post('http://localhost:8001/url', {
+        const response = await axios.post('https://server-2hyy.onrender.com/url', {
           urls: [link.links], // Assuming the server expects an array of URLs
         });
         if(response.data){
-          setshortedURL(`http://localhost:8001/${response.data.id}`)
+          setshortedURL(`https://server-2hyy.onrender.com/${response.data.id}`)
         }
       } else{
         toast.error("Please Enter URL");
