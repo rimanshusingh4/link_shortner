@@ -2,7 +2,7 @@ const express = require("express");
 const { connectToMongoDB } = require("./connect");
 const urlRoute = require("./routes/url");
 const URL = require("./models/url");
-const BAS_URL = process.env.BASE_URL;
+const DATABASE_URL = process.env.DATABASE_URL;
 
 var cors = require('cors')
 
