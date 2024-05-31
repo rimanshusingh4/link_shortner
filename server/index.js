@@ -9,7 +9,7 @@ var cors = require('cors')
 const app = express();
 const PORT = 8001;
 
-connectToMongoDB("mongodb+srv://rimanshu007:Rim2329@chakla.egtjcsa.mongodb.net/short-url?retryWrites=true&w=majority").then(() =>
+connectToMongoDB(DATABASE_URL).then(() =>
   console.log("Mongodb connected")
 );
 
