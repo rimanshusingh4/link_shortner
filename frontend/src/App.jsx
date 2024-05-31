@@ -13,7 +13,7 @@ function App() {
     <>
       <Navbar />
       <Routes>
-        <Route path="/" element={<MainSection isLoad={isLoad}/>} />
+        <Route path="/" element={<MainSection/>} />
         <Route path="/about" element={<About />} />
       </Routes>
       <Footer />

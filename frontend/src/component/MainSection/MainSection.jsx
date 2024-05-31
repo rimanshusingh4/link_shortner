@@ -7,7 +7,7 @@ import axios from 'axios';
 
 
 
-const MainSection = (props) => {
+const MainSection = () => {
   
   const [link, setLink] = useState({
       links: '',
@@ -17,7 +17,7 @@ const MainSection = (props) => {
   const [loader, setLoader] = useState(false);
 
   const shortURL = async () => {
-    if(!link) setLoader(true);
+      if(!link) setLoader(true);
       try {
         if (link.links !== "") {
           const response = await axios.post('https://server-2hyy.onrender.com/url', {
