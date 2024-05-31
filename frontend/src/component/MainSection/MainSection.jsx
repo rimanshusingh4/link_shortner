@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
-import { Triangle } from 'react-loader-spinner'
+import { Hourglass } from 'react-loader-spinner'
 import'./MainSection.css';
 import axios from 'axios';
 
 
 
-const MainSection = () => {
+const MainSection = (props) => {
   
   const [link, setLink] = useState({
       links: '',
@@ -17,7 +17,7 @@ const MainSection = () => {
   const [loader, setLoader] = useState(false);
 
   const shortURL = async () => {
-    if(!link) setLoader(true);
+    setLoader(true);
     try {
         if (link.links !== "") {
           const response = await axios.post('https://server-2hyy.onrender.com/url', {
@@ -25,7 +25,7 @@ const MainSection = () => {
           });
           if(response.data){
               setshortedURL(`https://server-2hyy.onrender.com/${response.data.id}`);
-              setLoader(false);            
+              //setLoader(false);            
           }
         } else{
           toast.error("Please Enter URL");
@@ -35,8 +35,7 @@ const MainSection = () => {
         console.error("Error shortening URL:", error);
         toast.error("An error occurred while shortening the URL");
     }
-  };5
-
+  };
 
   const copy = ()=>{
     navigator.clipboard.writeText(shortedURL)
@@ -92,15 +91,15 @@ const MainSection = () => {
             </div>
             <div>
               {
-                loader? <Triangle
+                loader? <div style={{display:"flex", gap:".4rem" ,alignItems:"center",justifyContent:"center",fontSize:"20px"}}><Hourglass
                 visible={true}
-                height="80"
-                width="80"
-                color="#4fa94d"
-                ariaLabel="triangle-loading"
+                height="50"
+                width="50"
+                ariaLabel="hourglass-loading"
                 wrapperStyle={{}}
                 wrapperClass=""
-                />: null
+                colors={['#f9d423', '#f83600']}
+                /><p style={{color: "#f83600"}}>Loading...</p></div>: null
               }
             </div>
           </div>
