@@ -17,8 +17,8 @@ const MainSection = () => {
   const [loader, setLoader] = useState(false);
 
   const shortURL = async () => {
-      if(!link) setLoader(true);
-      try {
+    if(!link) setLoader(true);
+    try {
         if (link.links !== "") {
           const response = await axios.post('https://server-2hyy.onrender.com/url', {
             urls: [link.links], // Assuming the server expects an array of URLs
@@ -35,7 +35,8 @@ const MainSection = () => {
         console.error("Error shortening URL:", error);
         toast.error("An error occurred while shortening the URL");
     }
-  };
+  };5
+
 
   const copy = ()=>{
     navigator.clipboard.writeText(shortedURL)
