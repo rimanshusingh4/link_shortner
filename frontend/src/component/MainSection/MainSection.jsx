@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import { Triangle } from 'react-loader-spinner'
 import'./MainSection.css';
 import axios from 'axios';
 
@@ -8,32 +9,34 @@ import axios from 'axios';
 
 const MainSection = () => {
   
-  
   const [link, setLink] = useState({
       links: '',
   })
   const [copySuccess, setCopySuccess] = useState(null);
-
   const [shortedURL, setshortedURL] = useState("")
-  
+  const [loader, setLoader] = useState(false);
+
   const shortURL = async () => {
+    if(!link) setLoader(true);
     try {
-      if (link.links !== "") {
-        const response = await axios.post('https://server-2hyy.onrender.com/url', {
-          urls: [link.links], // Assuming the server expects an array of URLs
-        });
-        if(response.data){
-          setshortedURL(`https://server-2hyy.onrender.com/${response.data.id}`)
+        if (link.links !== "") {
+          const response = await axios.post('https://server-2hyy.onrender.com/url', {
+            urls: [link.links], // Assuming the server expects an array of URLs
+          });
+          if(response.data){
+              setshortedURL(`https://server-2hyy.onrender.com/${response.data.id}`);
+              setLoader(false);            
+          }
+        } else{
+          toast.error("Please Enter URL");
         }
-      } else{
-        toast.error("Please Enter URL");
-      }
-    } catch (error) {
-      // Handle network errors or server errors
-      console.error("Error shortening URL:", error);
-      toast.error("An error occurred while shortening the URL");
+      } catch (error) {
+        // Handle network errors or server errors
+        console.error("Error shortening URL:", error);
+        toast.error("An error occurred while shortening the URL");
     }
-  };
+  };5
+
 
   const copy = ()=>{
     navigator.clipboard.writeText(shortedURL)
@@ -47,7 +50,6 @@ const MainSection = () => {
 
   }
   
-
   return (
     <>
       <div className="container">
@@ -87,6 +89,19 @@ const MainSection = () => {
                   <i onClick={copy} className="fa-regular fa-copy"></i>
                   {copySuccess === true && <span style={{ color: 'green', position:'absolute', bottom: '-50px',right:"10px",backgroundColor:"#ffff", borderRadius:"10px" ,padding:"2px 5px"}}>Copied to clipboard!</span>}
                 </div>}
+            </div>
+            <div>
+              {
+                loader? <Triangle
+                visible={true}
+                height="80"
+                width="80"
+                color="#4fa94d"
+                ariaLabel="triangle-loading"
+                wrapperStyle={{}}
+                wrapperClass=""
+                />: null
+              }
             </div>
           </div>
         </div>
