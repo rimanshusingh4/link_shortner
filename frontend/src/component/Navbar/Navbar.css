@@ -77,9 +77,6 @@ li{
     .ri-menu-line{
         display: block;
     }
-  /* .logo{
-    margin-left: -1.5rem;
-  } */
 }
 @media ((width<=1000px) and (width >=700px)) {
    .list{

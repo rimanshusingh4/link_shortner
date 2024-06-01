@@ -37,14 +37,17 @@
 
 .form-section {
   margin: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .input-field {
   background: #fff;
-  /* padding: 1rem; */
   height: 3rem;
   border-radius: 1rem;
-  max-width: 400px;
+  width: 100%;
   display: flex;
   align-items: center;
 }
@@ -59,13 +62,11 @@
 }
 .submit-btn {
   background: linear-gradient(to right, #f83600 0%, #f9d423 90%);
-
   border: 0;
   outline: 0;
   border-radius: 0 1rem 1rem 0;
   height: 100%;
   color: #fff;
-  /* width: 30%; */
   padding: 1rem;
   text-align: center;
   display: flex;
@@ -78,7 +79,7 @@
 .result-input {
   display: flex;
   justify-content: space-between;
-  /* padding: 1rem; */
+  width: 100%;
   background: rgba(50, 49, 49, 0.778);
   border-radius: 1rem;
   margin: 1rem 0;
@@ -93,9 +94,6 @@ p.result-link {
   font-size: 1.2rem;
   padding: 2rem;
 }
-/* .submit-btn span i {
-  margin-right: 1.5rem;
-} */
 
 .copy-icon i {
   font-size: 1rem;
@@ -103,7 +101,7 @@ p.result-link {
 }
 
 
-@media (width<=600px) {
+@media screen and (max-width: 480px) {
   .top-section .head h3 {
     font-size: 2rem;
     
@@ -112,6 +110,18 @@ p.result-link {
   .head .small {
     margin-top:5px ;
     
+  }
+  .submit-btn {
+    background: linear-gradient(to right, #f83600 0%, #f9d423 90%);
+    border: 0;
+    outline: 0;
+    height: 100%;
+    color: #fff;
+    padding: 0.5rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
   }
  
 }

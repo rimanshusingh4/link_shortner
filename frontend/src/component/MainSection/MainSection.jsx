@@ -17,7 +17,7 @@ const MainSection = () => {
   const [loader, setLoader] = useState(false);
 
   const shortURL = async () => {
-    if(link!=='') {
+    if(link.links!='') {
       setLoader(true);
     }
 
@@ -83,7 +83,10 @@ const MainSection = () => {
               </button>
             </div>
             
-            <div className="result-input">
+            <div  
+             className="result-input"
+             
+             >
                 <p className="result-link"> {shortedURL} </p>
                 {shortedURL == "" ?(<div className="copy-icon " style={{ position:'relative', cursor: "pointer",display:'none'}} >
                   <i onClick={copy} className="fa-regular fa-copy"></i>
