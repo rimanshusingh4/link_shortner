@@ -17,7 +17,10 @@ const MainSection = () => {
   const [loader, setLoader] = useState(false);
 
   const shortURL = async () => {
-    if(!link) setLoader(true);
+    if(link!=='') {
+      setLoader(true);
+    }
+
     try {
         if (link.links !== "") {
           const response = await axios.post('https://server-2hyy.onrender.com/url', {
